@@ -69,7 +69,10 @@ namespace GoogleMeasurementProtocol.Requests
                 throw new ArgumentNullException("clientId");
             }
 
-            Parameters.Add(clientId);
+            if (!Parameters.Exists(p => p is ClientId))
+            {
+                Parameters.Add(clientId);
+            }
 
             ValidateRequestParams();
 
@@ -126,7 +129,10 @@ namespace GoogleMeasurementProtocol.Requests
                 throw new ArgumentNullException("clientId");
             }
 
-            Parameters.Add(clientId);
+            if (!Parameters.Exists(p => p is ClientId))
+            {
+                Parameters.Add(clientId);
+            }
 
             ValidateRequestParams();
 
